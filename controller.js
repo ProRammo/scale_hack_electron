@@ -1,7 +1,7 @@
 //controller.js
 console.log('in file controller.js (' + __dirname + ')');
 
-var PythonShell = require('python-shell');
+var PythonShell = require(__dirname + '/python-shell-moose.js');
 
 var App = angular.module('App', []);
 
