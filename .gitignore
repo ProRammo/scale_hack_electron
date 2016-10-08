@@ -2,3 +2,7 @@
 .DS_Store
 serial.py
 serial.pyc
+/pyserial-3.1.1.data/
+/pyserial-3.1.1.dist-info/
+/pyserial-3.1.1/
+/serial/
