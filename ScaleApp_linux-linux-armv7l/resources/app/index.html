@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html ng-app="App">
+
+	<head>
+		
+		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+		<script src="./controller.js"></script>
+
+		<title>GUI</title>
+
+	</head>
+
+
+
+	<body>
+
+		<div class="container" ng-controller="AppCtrl">
+			<div class="row">
+				<br>
+				<h1>GUI</h1>
+				
+				<br>
+				<br>
+				<a class="btn btn-info" ng-click="getPythonData()">Send W</a>
+				output -> {{data}}
+				<br>
+			</div>
+		</div>
+
+	</body>
+
+</html>
