@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html data-ng-app="ShoppingCart">
+	<head>
+		<title>Shopping Cart</title>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/styles.css">
+	</head>
+	<body>
+		<div class="wrapper" data-ng-controller="MainController">
+			<div class="date-time"><span class="pull-right"> <b>{{ room }}</b></span><br><span class="pull-right"> <i>{{ transaction.time | date:'EEEE, MMMM d, y' }}</i></span><br><span class="pull-right"> <i>{{ transaction.time | date:'hh:mm:ss a' }}</i></span></div>
+			<div class="logo-container">
+				<div class="logo"><img class="img-responsive" src="./ffm_logo_flat.png"></div>
+			</div>
+			<div class="container-fluid">
+				<div class="shadow-stuff">
+					<div class="content-container">
+						<p class="cashier"><span class="cashier-name">{{ transaction.cashier }} </span>is happy to help you.</p>
+
+						<div class="cart">
+							<table class="table">
+								<colgroup>
+									<col span="1" style="width: 50%">
+									<col span="1" style="width: 35%">
+									<col span="1" style="width: 15%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th></th>
+										<th class="purchase-name"> </th>
+										<th class="purchase-total"> </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-ng-repeat="purchase in transaction.shopping_cart"> 
+										<!--  data-ng-animate=" 'animate' "-->
+										<td style="border-top: none"></td>
+										<td class="purchase-name"><span class="purchase-product">{{ purchase.name }}</span><br><span class="purchase-breakdown">{{ purchase.quantity }} @ {{ purchase.unit_price | currency:"$" }}</span></td>
+										<td class="purchase-total">
+											 {{ purchase.tax > 0 ? '*' : '' }} {{ purchase.subtotal | currency:"$" }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="cart-aggregates">
+							<table>
+								<colgroup>
+									<col span="1" style="width: 50%">
+									<col span="1" style="width: 50%">
+								</colgroup>
+								<tbody>
+									<tr class="subtotal">
+										<td>Subtotal</td>
+										<td>{{ transaction.subtotal | currency:"$" }}</td>
+									</tr>
+									<tr class="tax">
+										<td>HST ON</td>
+										<td>{{ transaction.tax | currency:"$" }}</td>
+									</tr>
+									<tr class="total">
+										<td>
+											 Total<br></td>
+										<td>
+											 {{ transaction.displayTotal | currency:"$" }}<br></td>
+									</tr>
+									<tr class="tendered">
+										<td>Tendered</td>
+										<td>{{ transaction.tendered | currency:"$" }}</td>
+									</tr>
+									<tr class="change">
+										<td>Change</td>
+										<td>{{ transaction.change | currency:"$" }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- socket.io-->
+		<script src="./js/socket.io.js"></script>
+		<!-- angular-->
+		<script src="./js/angular.min.js"></script>
+		<script src="./js/angular-animate.min.js"></script>
+		<script src="./js/app.js"></script>
+	</body>
+</html>

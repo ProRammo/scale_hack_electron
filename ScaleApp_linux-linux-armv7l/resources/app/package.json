@@ -1,8 +1,8 @@
 {
-  "name": "your-app",
+  "name": "second-screen",
   "version": "0.1.0",
   "main": "main.js",
   "dependencies": {
-    "electron-prebuilt": "^1.4.2"
+    "electron-prebuilt": "^1.4.3"
   }
 }

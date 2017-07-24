@@ -6,13 +6,16 @@ let win;
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600});
+  //win = new BrowserWindow({width: 1000, height: 1000});
+  //win = new BrowserWindow({fullscreen: true, frame: false});
+  win = new BrowserWindow({kiosk: true});
 
   // and load the index.html of the app.
-  win.loadURL(`file://${__dirname}/index.html`);
+  win.loadURL(`file://${__dirname}/second_screen.html`);
+
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
 
   // Emitted when the window is closed.

@@ -1,0 +1,394 @@
+
+body {
+	position: fixed;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #fff8d9;
+}
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+.date-time {
+	margin-top: 1%;
+	margin-right: 5%;
+	float: right;
+	font-size: 105%;
+	font-style: italic;
+}
+
+.logo-container {
+	margin-top: 1%;
+	margin-left: 5%;
+	float: left;
+	width: 20%;
+	height: auto;
+	min-width: 60px;
+}
+
+.logo {
+	width: 100%;
+	height: auto;
+	min-width: 60px;
+}
+
+.container-fluid {
+	height: 100%;
+	width: 100%;
+}
+
+.shadow-stuff {
+	/*margin: 1%, 1%, 1%, 1%;*/
+	position: fixed;
+	position: absolute;
+	top: 10%;
+	left: 5%;
+	width: 90%;
+	height: 85%;
+	-moz-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+	-webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+	border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+	-moz-box-shadow: rgba(0,0,0,.30) 0 2px 3px;
+	-webkit-box-shadow: rgba(0,0,0,.30) 0 2px 3px;
+	box-shadow: rgba(0,0,0,.30) 0 2px 3px;
+}
+
+.content-container {
+	margin: 0% 0% 0% 0%;
+	padding: 2% 2% 2% 2%;
+	width: 100%;
+	height: 100%;
+	/*height: 200px;*/
+	background-color: white;
+	border: 1px solid #FFF;
+	background: #F6F6F6;
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(50%,rgba(249, 249, 249, 1)),color- stop(100%,rgba(240, 240, 240, 1)));
+	background: -webkit-linear-gradient(top,rgba(249, 249, 249, 1) 50%,rgba(240, 240, 240, 1) 100%);
+	background: -moz-linear-gradient(top,rgba(249, 249, 249, 1) 50%,rgba(240, 240, 240, 1) 100%);
+	background: -o-linear-gradient(top,rgba(249, 249, 249, 1) 50%,rgba(240, 240, 240, 1) 100%);
+	background: -ms-linear-gradient(top,rgba(249, 249, 249, 1) 50%,rgba(240, 240, 240, 1) 100%);
+	background: linear-gradient(top,rgba(249, 249, 249, 1) 50%,rgba(240, 240, 240, 1) 100%);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 2px 1px rgba(255,255,255,.97);
+	-moz-box-shadow: inset 0 2px 1px rgba(255,255,255,.97);
+	box-shadow: inset 0 2px 1px rgba(255,255,255,.97);
+}
+
+.cashier {
+	font-size: 150%;
+	text-align: left;
+}
+
+.cashier-name {
+	font-weight: bold;
+}
+
+.cart {
+	margin-top: -1%;
+	height: 95%;
+	overflow-y: scroll;
+}
+
+.purchase-name {
+	text-align: right;
+  font-size: 150%;
+}
+
+.purchase-product {
+	letter-spacing: 1px;
+}
+
+.purchase-total {
+	text-align: right;
+	font-size: 165%;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+.purchase-breakdown {
+	font-size: 85%;
+	font-style: italic;
+}
+
+.cart-aggregates {
+	position: fixed;
+	position: absolute;
+	right: 55%;
+	bottom: 0;
+	width: 40%;
+	margin-right: 1%;
+	margin-bottom: 1%;
+	padding-top: 1%;
+	text-align: right;
+	border-top: 1px dashed #ddd;
+}
+
+.cart-aggregates table {
+	width: 100%;
+	height: 100%;
+}
+
+.cart-aggregates td {
+	padding: 1%;
+	font-size: 110%;
+}
+
+.subtotal {
+
+}
+
+.tax {
+
+}
+
+.total {
+	font-size: 200%;
+	font-weight: bold;
+}
+
+.tendered {
+
+}
+
+.change {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+/*
+ *		ANIMATE FADE-IN/FADE-OUT OF ITEMS
+ */
+
+/*
+  Use CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+.repeated-item.ng-enter, .repeated-item.ng-move {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+.repeated-item.ng-enter.ng-enter-active,
+.repeated-item.ng-move.ng-move-active {
+  opacity:1;
+}
+
+/*
+  Use CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+.repeated-item.ng-leave {
+  -webkit-animation:0.5s my_animation;
+  -moz-animation:0.5s my_animation;
+  -o-animation:0.5s my_animation;
+  animation:0.5s my_animation;
+}
+
+/* Vendor Specific Keyframes Definitions */
+
+@keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+/* 
+ATTEMPT 2 AT ANIMATE
+*/
+/*
+.animate-enter, 
+.animate-leave
+{ 
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+} 
+
+.animate-enter.animate-enter-active, 
+.animate-leave {
+    opacity: 1;
+    top: 0;
+    height: 30px;
+}
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    opacity: 0;
+    top: -50px;
+    height: 0px;
+}*/
+
+/* ATTEMPT 3 - Animate Cube */
+/*
+.animate-enter, 
+.animate-leave { 
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+} 
+ 
+.animate-leave.animate-leave-active,
+.animate-enter {
+    -webkit-transform: rotateX(-180deg) translatez(30px);
+    -moz-transform: rotateX(-180deg) translatez(30px);
+    -ms-transform: rotateX(-180deg) translatez(30px);
+    -o-transform: rotateX(-180deg) translatez(30px);
+    transform: rotateX(-180deg) translatez(30px);
+    opacity: 0;
+    height: 0px;
+}        
+ 
+.animate-enter.animate-enter-active,
+.animate-leave {
+    -webkit-transform: rotateX(0deg) translatez(30px);
+    -moz-transform: rotateX(0deg) translatez(30px);
+    -ms-transform: rotateX(0deg) translatez(30px);
+    -o-transform: rotateX(0deg) translatez(30px);
+    transform: rotateX(0deg) translatez(30px);
+    opacity: 1;
+    height: 30px;
+} */
+
+/* ANIMATE 4 - BLINK */
+
+/*
+.animate-enter { 
+    -webkit-animation: enter 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    animation: enter 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	display: block;
+    position: relative;
+} 
+@-webkit-keyframes enter {
+	from {
+	    opacity: 0;
+    	height: 0px;
+    }
+    20% {
+		opacity: .5;
+    }
+    40% {
+		opacity: .15;    	
+		color: red;    	    }
+    60% {
+		opacity: .75;    	
+    }
+    80% {
+		opacity: .3;    	
+    }
+    to {
+        opacity: 1;
+    	height: 30px;
+    }
+}
+@keyframes enter {
+	from {
+	    opacity: 0;
+    	height: 0px;
+    }
+    20% {
+		opacity: .5;
+    }
+    40% {
+		opacity: .15;    	
+		color: red;    	    }
+    60% {
+		opacity: .75;    	
+    }
+    80% {
+		opacity: .3;    	
+    }
+    to {
+        opacity: 1;
+    	height: 30px;
+    }
+}
+
+.animate-leave { 
+    -webkit-animation: leave 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    animation: leave 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	display: block;
+    position: relative;
+} 
+@-webkit-keyframes leave {
+	to {
+	    opacity: 0;
+    	height: 0px;
+    }
+    80% {
+		opacity: .25;
+    }
+    60% {
+		opacity: .10;    	
+		color: red;    	    }
+    40% {
+		opacity: .5;    	
+    }
+    20% {
+		opacity: .30;    	
+    }
+    from {
+        opacity: 1;
+    	height: 30px;
+    }
+}
+@keyframes leave {
+	to {
+	    opacity: 0;
+    	height: 0px;
+    }
+    80% {
+		opacity: .25;
+    }
+    60% {
+		opacity: .10;    	
+		color: red;    	    }
+    40% {
+		opacity: .5;    	
+    }
+    20% {
+		opacity: .30;    	
+    }
+    from {
+        opacity: 1;
+    	height: 30px;
+    }
+}
+*/
